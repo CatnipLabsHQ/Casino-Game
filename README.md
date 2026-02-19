@@ -1,4 +1,4 @@
-# Casino Game
+# Casino Game v1.0
 
 My first self-written Java program: a simple betting game.
 You start with 100$, bet an amount, and guess a number from 1 to 10.
