@@ -3,7 +3,17 @@ import java.util.Scanner;
 
 public class Catsino {
 
+    // Ansi Color's and Clear
+    public static final String ANSI_CLEAR = "\033[2J\033[H";
+
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLUE = "\u001B[34m"; 
+
     public static void main(String[] args) {
+
+       // clear's Terminal Screen
+        System.out.print(ANSI_CLEAR);
+
 
         Scanner input = new Scanner(System.in);
 
@@ -24,21 +34,23 @@ public class Catsino {
 
 
             switch (input.nextInt()){
+            
                 case 1:
+
+                  System.out.print(ANSI_CLEAR);
+
                     // Game
                     int randomNumber = new Random().nextInt(3) + 1;
-                    System.out.println("");
                     System.out.println("This is your balanc: " + money + "$");
                     System.out.print("Please enter your bet: ");
                     bet = input.nextInt();
 
-                    if(bet == 13_15_14_5_25){
-
+                    if(bet == 13_15_14_5_25){ // money cheat code                      
+                    
                       System.out.println("How much Money you want to add");
                       System.out.print(">");
                       
                       int cheatMoney = input.nextInt();
-
                       money += cheatMoney;
 
                       break;
@@ -88,8 +100,8 @@ public class Catsino {
                     break;
 
                 case 3:
-                    System.out.println("");
-                    System.out.println("Thanks for playing!");
+                    System.out.print(ANSI_CLEAR);
+                    System.out.println(ANSI_BLUE + "Thanks for playing!" + ANSI_RESET);
                     System.exit(0);
             }
         }
