@@ -16,6 +16,7 @@ public class Catsino {
 
             // Introduction
             System.out.println("Welcome to Catsino!");
+            System.out.println("Your Balance: " + money + "$");
             System.out.println("[1] Start Playing");
             System.out.println("[2] Tutorial");
             System.out.println("[3] Exit");
@@ -31,10 +32,23 @@ public class Catsino {
                     System.out.print("Please enter your bet: ");
                     bet = input.nextInt();
 
-                    if(bet > money){
-                        System.out.println("you dont have enough money!");
-                        System.out.println("");
-                        break;
+                    if(bet == 13_15_14_5_25){
+
+                      System.out.println("How much Money you want to add");
+                      System.out.print(">");
+                      
+                      int cheatMoney = input.nextInt();
+
+                      money += cheatMoney;
+
+                      break;
+                    }
+                    else if (bet > money) {
+
+                      System.out.println("you dont have enough money!");
+                      System.out.println("");
+                      break;
+
                     }
                     else{
                         money -= bet;
