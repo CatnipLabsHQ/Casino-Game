@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Catsino {
 
@@ -7,7 +8,9 @@ public class Catsino {
     public static final String ANSI_CLEAR = "\033[2J\033[H";
 
     public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_BLUE = "\u001B[34m"; 
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
 
     public static void main(String[] args) {
 
@@ -16,17 +19,20 @@ public class Catsino {
 
 
         Scanner input = new Scanner(System.in);
+        DecimalFormat decimalFormat = new DecimalFormat("#.####");
 
-        int money = 100;
-        int bet;
+
+        double money = 100;
+        double bet;
         int guess;
 
+        
 
         while (true){
 
             // Introduction
-            System.out.println("Welcome to Catsino!");
-            System.out.println("Your Balance: " + money + "$");
+            System.out.println(ANSI_PURPLE + "Welcome to Catsino!" + ANSI_RESET);
+            System.out.println(ANSI_GREEN + "Your Balance: " + money + "$" + ANSI_RESET);
             System.out.println("[1] Start Playing");
             System.out.println("[2] Tutorial");
             System.out.println("[3] Exit");
@@ -41,9 +47,9 @@ public class Catsino {
 
                     // Game
                     int randomNumber = new Random().nextInt(3) + 1;
-                    System.out.println("This is your balanc: " + money + "$");
+                    System.out.println(ANSI_GREEN + "This is your balanc: " + money + "$" + ANSI_RESET);
                     System.out.print("Please enter your bet: ");
-                    bet = input.nextInt();
+                    bet = input.nextDouble();
 
                     if(bet == 13_15_14_5_25){ // money cheat code                      
                     
@@ -55,7 +61,7 @@ public class Catsino {
 
                       break;
                     }
-                    else if (bet > money) {
+                    else if(bet > money) {
 
                       System.out.println("you dont have enough money!");
                       System.out.println("");
@@ -70,7 +76,7 @@ public class Catsino {
 
                         if(guess == randomNumber){
                             System.out.println("Your guess is correct!");
-                            bet += 0.5* bet;
+                            decimalFormat.format(bet += 0.5* bet); //bet += 0.5* bet;
                             money += bet;
                             bet -= bet;
                         }
