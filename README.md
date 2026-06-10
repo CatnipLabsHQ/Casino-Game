@@ -12,3 +12,6 @@ Important
 I use AI for updating changelogs. Because I don't know how to do this.
 
 Because I'm very new 
+
+Note:
+Sound are from pixabey
